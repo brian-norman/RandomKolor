@@ -2,7 +2,7 @@
 🎨 A tiny (Kotlin) library for generating attractive colors
 
 Inspired by David Merfield's [randomColor.js](https://github.com/davidmerfield/randomColor). 
-It is a ported version to Kotlin. You can use the library to generate attractive random colors on Android apps.
+You can use the library to generate attractive random colors on Android apps.
 
 This project comes with a sample app which demonstrates some of the functionality:
 
@@ -44,3 +44,4 @@ val rgbStrings = RandomKolor().randomColors(count = 3, hue = ColorHue(ORANGE), l
 
 ## TODO
 - Currently only RGB is supported, would like to support other formats
+- Add alpha to RGB
