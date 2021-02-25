@@ -10,7 +10,7 @@ This project comes with a sample app which demonstrates some of the functionalit
 
 ## Installation
 The library is [hosted on JitPack](https://jitpack.io/#brian-norman/RandomKolor/1.0)
-1. Add it in your root build.gradle at the end of repositories:
+1. Add it in your root `build.gradle` at the end of repositories:
 ```
 allprojects {
   repositories {
