@@ -1,0 +1,3 @@
+include ':RandomKolor'
+include ':app'
+rootProject.name = "Random Kolor"
