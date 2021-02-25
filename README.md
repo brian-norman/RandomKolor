@@ -8,6 +8,24 @@ This project comes with a sample app which demonstrates some of the functionalit
 
 <img src="screenshot.png" width="300"/>
 
+## Installation
+The library is [hosted on JitPack](https://jitpack.io/#brian-norman/RandomKolor/1.0)
+1. Add it in your root build.gradle at the end of repositories:
+```
+allprojects {
+  repositories {
+    ...
+    maven { url 'https://jitpack.io' }
+  }
+}
+```
+2. Add the dependency
+```
+dependencies {
+    implementation 'com.github.brian-norman:RandomKolor:1.0'
+}
+```
+
 ## Options
 - ```hue``` – Controls the hue of the generated color. You can pass in a color: `Color.RED`, `Color.ORANGE`, `Color.YELLOW`, `Color.Green`, `Color.BLUE`, `Color.Purple`, `Color.PINK` and `Color.MONOCHROME` are currently supported.
 - ```luminosity``` – Controls the luminosity of the generated color. Library supports: `Luminosity.RANDOM`, `Luminosity.BRIGHT`, `Luminosity.LIGHT`, `Luminosity.DARK`
