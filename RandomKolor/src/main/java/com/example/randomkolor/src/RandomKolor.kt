@@ -97,16 +97,8 @@ class RandomKolor {
     private fun HSVtoRGB(hueValue: Int, saturation: Int, brightness: Int): Triple<Int, Int, Int> {
         // This doesn't work for the values of 0 and 360
         // Here's the hacky fix
-        var h: Float = hueValue.toFloat()
-        if (h == 0f) {
-            h = 1f
-        }
-        if (h == 360f) {
-            h = 359f
-        }
-
         // Rebase the h,s,v values
-        h = hueValue/360f
+        val h: Float = hueValue.coerceIn(1, 359) / 360f
         val s = saturation/100f
         val v = brightness/100f
 
