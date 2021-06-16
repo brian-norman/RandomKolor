@@ -1,6 +1,9 @@
 # RandomKolor
 🎨 A tiny (Kotlin) library for generating attractive colors
 
+[![](https://jitpack.io/v/brian-norman/RandomKolor.svg)](https://jitpack.io/#brian-norman/RandomKolor)
+
+
 Inspired by David Merfield's [randomColor.js](https://github.com/davidmerfield/randomColor). 
 You can use the library to generate attractive random colors on Android apps.
 
