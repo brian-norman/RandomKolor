@@ -1,5 +1,6 @@
 package com.example.randomkolor.src
 
+import androidx.core.graphics.ColorUtils
 import kotlin.math.floor
 import kotlin.random.Random
 
@@ -37,7 +38,7 @@ class RandomKolor {
     ): List<String> {
         val colors = mutableListOf<String>()
         for (i in 1..count) {
-            colors.add(randomColor(hue, luminosity))
+            colors.add(randomColor(hue, luminosity, format))
         }
         return colors
     }
@@ -87,12 +88,11 @@ class RandomKolor {
 
     private fun setFormat(hueValue: Int, saturation: Int, brightness: Int, format: Format): String {
         return when (format) {
-            Format.HSL -> TODO()
+            Format.HSL -> HSVtoHSL(hueValue, saturation, brightness).toString()
             Format.RGB -> HSVtoRGB(hueValue, saturation, brightness).toString()
-            Format.HEX -> TODO()
+            Format.HEX -> HSVtoHEX(hueValue, saturation, brightness)
         }
     }
-
 
     private fun HSVtoRGB(hueValue: Int, saturation: Int, brightness: Int): Triple<Int, Int, Int> {
         // This doesn't work for the values of 0 and 360
@@ -123,6 +123,32 @@ class RandomKolor {
 
         return Triple(floor(r*255f).toInt(), floor(g*255f).toInt(), floor(b*255f).toInt())
     }
+
+    private fun HSVtoHSL(hueValue: Int, saturation: Int, brightness: Int): Triple<Float, Float, Float> {
+        val rgb: Triple<Int, Int, Int> = HSVtoRGB(hueValue, saturation, brightness)
+
+        val r = rgb.first
+        val g = rgb.second
+        val b = rgb.third
+
+        val hsl: FloatArray = FloatArray(3)
+        ColorUtils.RGBToHSL(r, g, b, hsl)
+
+        return Triple(hsl[0], hsl[1], hsl[2])
+    }
+
+    private fun HSVtoHEX(hueValue: Int, saturation: Int, brightness: Int): String {
+        val rgb: Triple<Int, Int, Int> = HSVtoRGB(hueValue, saturation, brightness)
+
+        val r = rgb.first
+        val g = rgb.second
+        val b = rgb.third
+
+        // Convert r, g and b values to 2 digit hex strings and concat them to color code
+        // Format: #RRGGBB
+        return String.format("#%02X%02X%02X", r, g, b)
+    }
+
 
     /**
      * Turns hue into a color if it isn't already one.
