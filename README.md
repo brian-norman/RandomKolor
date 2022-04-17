@@ -45,18 +45,18 @@ fun randomColors(count: Int, hue: Hue = RandomHue, luminosity: Luminosity = Lumi
 
 ## Examples
 ```kotlin
-// Generate an attractive RGB randomly
+// Generate an attractive color (RGB) randomly
 val rgbString = RandomKolor().randomColor()
 ```
 
 ```kotlin
-// Generate a light blue RGB 
-val rgbString = RandomKolor().randomColor(hue = ColorHue(BLUE), luminosity = Luminosity.LIGHT)
+// Generate a light blue (HEX)
+val rgbString = RandomKolor().randomColor(hue = ColorHue(BLUE), luminosity = Luminosity.LIGHT, format = Format.HEX)
 ```
 
 ```kotlin
-// Generate three light blue oranges
-val rgbStrings = RandomKolor().randomColors(count = 3, hue = ColorHue(ORANGE), luminosity = Luminosity.LIGHT)
+// Generate three light oranges (HSL)
+val rgbStrings = RandomKolor().randomColors(count = 3, hue = ColorHue(ORANGE), luminosity = Luminosity.LIGHT, format = Format.HSL)
 ```
 
 ## Acknowledgements
@@ -64,5 +64,4 @@ val rgbStrings = RandomKolor().randomColors(count = 3, hue = ColorHue(ORANGE), l
 - Wei Wang's swift port [RandomColorSwift](https://github.com/onevcat/RandomColorSwift)
 
 ## TODO
-- Currently only RGB is supported, would like to support other formats
 - Add alpha to RGB
