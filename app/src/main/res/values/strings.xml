@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Random Kolor</string>
     <string name="randomkolor">RandomKolor</string>
-    <string name="generate_random_color">Generate Random Color</string>
+    <string name="generate_random_color">Generate Random Color (RGB)</string>
     <string name="one_randomly_colored_circle">One Randomly Colored Circle</string>
-    <string name="generate_random_light_blue">Generate Random Light Blue</string>
+    <string name="generate_random_light_blue">Generate Random Light Blue (HEX)</string>
 </resources>
